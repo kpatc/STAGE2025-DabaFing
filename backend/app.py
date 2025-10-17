@@ -86,9 +86,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'medoux53@gmail.com'
+app.config['MAIL_USERNAME'] = 'yourmail@gmail.com'
 app.config['MAIL_PASSWORD'] = 'nkkc hsaa dztq wyma'
-app.config['MAIL_DEFAULT_SENDER'] = 'medoux53@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = 'yourmail@gmail.com'
 app.config['MAIL_SUPPRESS_SEND'] = False
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'votre_cle_secrete')
 
@@ -148,7 +148,7 @@ limiter = Limiter(
 )
 
 # Configuration de la base de données
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:josue001@localhost:5432/DabaFing'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:user@localhost:5432/DabaFing'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialisation des extensions
@@ -1541,3 +1541,4 @@ if __name__ == "__main__":
         # S'assurer que le scheduler est arrêté proprement
         if scheduler:
             scheduler.shutdown()
+
