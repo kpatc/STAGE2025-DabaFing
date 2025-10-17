@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Analyse d'empreintes{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Analyse d'empreintes digitales</h2>
+    
+    <div class="card">
+        <div class="card-header">
+            <h5>Téléverser une empreinte digitale</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Sélectionnez une image d'empreinte digitale</label>
+                    <input class="form-control" type="file" id="file" name="file" accept=".png,.jpg,.jpeg,.bmp" required>
+                    <div class="form-text">Formats acceptés: PNG, JPG, JPEG, BMP (max 8MB)</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Analyser</button>
+            </form>
+        </div>
+    </div>
+
+    {% if filename %}
+    <div class="card mt-4">
+        <div class="card-header">
+            <h5>Résultats de l'analyse</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="img-fluid rounded" alt="Empreinte analysée">
+                    <p class="mt-2 text-muted">Empreinte analysée: {{ filename }}</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Résultat de l'analyse</h4>
+                    <div class="alert alert-info mt-3">
+                        <strong>Type d'empreinte:</strong> {{ prediction }}<br>
+                        
+                        <strong>Nombre de crêtes prédit:</strong> {{ nombre_cretes }}
+                    </div>
+                    <a href="{{ url_for('fingerprint_analysis') }}" class="btn btn-outline-primary">
+                        Nouvelle analyse
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+.env
+.env.*
+.DS_Store
+
+# Flask
+instance/
+*.log
+
+# Jupyter
+.ipynb_checkpoints
+
+# Models & Data
+*models/
+*training_data/
+*training_reports/
+*.h5
+*.pth
+*.pt
+
+# Node/React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# VSCode & system
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+*.iml

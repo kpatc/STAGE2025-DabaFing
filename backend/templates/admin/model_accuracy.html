@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Précision du modèle</h2>
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Performance actuelle du modèle</h5>
+            <div class="progress mt-3" style="height: 30px;">
+                <div class="progress-bar bg-success" role="progressbar" 
+                     style="width: {{ accuracy }}%" 
+                     aria-valuenow="{{ accuracy }}" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">
+                    {{ "%.4f"|format(accuracy_value) }}
+                </div>
+            </div>
+           <p class="mt-3">Le modèle actuel a une précision de validation de <strong>{{ "%.2f"|format(accuracy_value * 100) }}%</strong>.</p>
+            <p class="text-muted">Validation Loss: {{ "%.4f"|format(loss_value) }}</p>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-primary mt-3">Retour au tableau de bord</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

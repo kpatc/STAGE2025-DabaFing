@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3a0ca3;
+  --accent-color: #f72585;
+  --dark-color: #1a1a2e;
+  --light-color: #f8f9fa;
+  --gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 50%, #f72585 100%);
+  --glass-effect: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 25px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base Styles */
+body {
+  background-color: var(--dark-color);
+  font-family: 'Poppins', sans-serif;
+  color: var(--light-color);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.modern-analysis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.modern-background-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.15) 0%, transparent 30%);
+  z-index: -1;
+}
+
+/* Header Styles */
+.modern-header-container {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.modern-logo-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.modern-logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(67, 97, 238, 0.5));
+  position: relative;
+  z-index: 2;
+}
+
+.modern-logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(67, 97, 238, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.modern-analysis-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--light-color);
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.modern-title-icon {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(247, 37, 133, 0.7));
+}
+
+.modern-header-underline {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 3px;
+}
+
+/* Content Grid */
+.modern-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+}
+
+.modern-info-card {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border: var(--glass-border);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.modern-info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.modern-card-icon-container {
+  background: var(--gradient);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.modern-card-icon {
+  font-size: 1.8rem;
+  z-index: 2;
+}
+
+.modern-icon-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 20px;
+}
+
+.dual-icons {
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.modern-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.modern-card-content h3 {
+  color: var(--light-color);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.modern-card-divider {
+  height: 2px;
+  background: var(--gradient);
+  margin: 1.5rem 0;
+  width: 50px;
+  border-radius: 2px;
+}
+
+.modern-card-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.modern-card-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(247, 37, 133, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Navigation Button */
+.modern-navigation-button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+  font-size: 1.1rem;
+  overflow: hidden;
+}
+
+.modern-navigation-button.next {
+  right: 2rem;
+  bottom: 2rem;
+  background: var(--gradient);
+  color: white;
+}
+
+.modern-button-icon {
+  font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+.modern-button-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.modern-navigation-button:hover .modern-button-glow {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .modern-content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modern-analysis-header {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-analysis-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .modern-info-card {
+    padding: 2rem;
+  }
+  
+  .modern-navigation-button {
+    position: static;
+    margin: 2rem auto 0;
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-analysis-header {
+    font-size: 1.8rem;
+    flex-direction: column;
+  }
+  
+  .modern-title-icon {
+    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  }
+  
+  .modern-info-card {
+    padding: 1.5rem;
+  }
+}
+/* Styles supplémentaires pour la grille d'actions */
+.modern-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.modern-action-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  color: var(--light-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-action-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+.modern-action-icon {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+  transition: var(--transition);
+}
+
+.modern-action-button:hover .modern-action-icon {
+  transform: scale(1.1);
+}
+
+/* Animation de fond pour les boutons d'action */
+.modern-action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(247, 37, 133, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.modern-action-button:hover::before {
+  opacity: 1;
+}
+
+/* Bouton retour positionné différemment */
+.modern-navigation-button.back {
+  left: 2rem;
+  bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--light-color);
+}
+
+/* Responsive pour la grille d'actions */
+@media (max-width: 768px) {
+  .modern-action-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-action-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modern-action-button {
+    padding: 1.5rem 1rem;
+  }
+}

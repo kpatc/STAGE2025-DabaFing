@@ -1,0 +1,207 @@
+/* UserManagement.css */
+.user-management {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.user-management h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-image: var(--gradient);
+  border-image-slice: 1;
+}
+
+.back-link:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(110, 0, 255, 0.3);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 2rem;
+  background: rgba(20, 10, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.user-table thead {
+  background: linear-gradient(135deg, rgba(110, 0, 255, 0.8), rgba(0, 240, 255, 0.6));
+}
+
+.user-table th {
+  padding: 1.2rem 1rem;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.user-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
+}
+
+.user-table tr:last-child td {
+  border-bottom: none;
+}
+
+.user-table tr:hover {
+  background: rgba(110, 0, 255, 0.1);
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ff8a00, #ff0058);
+  box-shadow: 0 4px 15px rgba(255, 0, 88, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  box-shadow: 0 4px 15px rgba(0, 176, 155, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 240, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--secondary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-management {
+    padding: 1rem;
+  }
+  
+  .user-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-management h2 {
+    font-size: 2rem;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}

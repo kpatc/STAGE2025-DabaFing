@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Gestion des utilisateurs</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id_utilisateur }}</td>
+                <td>{{ user.nom }} {{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('toggle_admin', user_id=user.id_utilisateur) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-sm {{ 'btn-success' if user.role != 'admin' else 'btn-warning' }}">
+                            {{ 'Promouvoir admin' if user.role != 'admin' else 'Rétrograder' }}
+                        </button>
+                    </form>
+                    <form method="POST" action="{{ url_for('delete_user', user_id=user.id_utilisateur) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                            Supprimer
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

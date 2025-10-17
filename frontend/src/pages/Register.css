@@ -1,0 +1,29 @@
+/* Vous pouvez utiliser le même CSS que Login.css */
+/* Ou simplement importer le fichier Login.css */
+@import './Login.css';
+
+/* Si vous voulez des ajustements spécifiques pour Register */
+.login-page .login-title {
+  color: #f98d88;
+  font-size: 1.5rem;
+}
+
+.login-page .login-button {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Bordure en dégradé */
+  border-image: var(--accent-gradient);
+  border-image-slice: 1;
+
+}
+
+.login-page .login-button:hover {
+  color: #ffffff;
+}
+
+.button-icon {
+  color: white; /* ou une autre couleur visible */
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    <h2>Se connecter</h2>
+    <form action="{{ url_for('login') }}" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="mot_de_passe">Mot de passe:</label>
+        <input type="password" name="mot_de_passe" required><br>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('forgot_password') }}">Mot de passe oublié ?</a> <!-- Lien vers la page de réinitialisation -->
+</body>
+</html>

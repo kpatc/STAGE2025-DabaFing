@@ -1,0 +1,228 @@
+/* AnalysisHistory.css */
+.history-container {
+  font-family: 'Orbitron', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--light-text);
+}
+
+.history-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.history-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.history-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 0, 255, 0.2);
+}
+
+.empty-history p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+.analyses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.analysis-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 0, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.analysis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(110, 0, 255, 0.4);
+}
+
+.analysis-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.analysis-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.analysis-card:hover .analysis-image img {
+  transform: scale(1.05);
+}
+
+.analysis-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(10, 2, 24, 0.7), transparent);
+}
+
+.analysis-details {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.analysis-details h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: var(--light-text);
+}
+
+.analysis-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.analysis-result {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.analysis-result span {
+  color: var(--text-muted);
+}
+
+.analysis-result strong {
+  color: var(--secondary-color);
+}
+
+.correction-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: var(--accent-gradient);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 10px rgba(255, 0, 230, 0.3);
+}
+
+.view-details-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: rgba(110, 0, 255, 0.2);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.view-details-button:hover {
+  background: rgba(0, 240, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(110, 0, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--secondary-color);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff6b6b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b6b;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.error-container button {
+  background: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-container button:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .analyses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .history-title {
+    font-size: 2rem;
+  }
+}

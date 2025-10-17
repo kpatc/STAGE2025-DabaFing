@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #6e00ff;
+  --secondary-color: #00f0ff;
+  --accent-color: #ff00e6;
+  --dark-bg: #0a0218;
+  --light-text: #ffffff;
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --accent-gradient: linear-gradient(135deg, var(--accent-color), #ff8a00);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  overflow-x: hidden;
+}
+
+.profil-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Styles du logo identiques à login.jsx */
+.page-logo-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.page-logo {
+  height: 60px;
+  width: auto;
+  animation: fadeInLogo 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInLogo {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.brand-name {
+  font-family: 'Orbitron', sans-serif;
+  margin-left: 10px;
+  color: #9ffcff;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out forwards, slideInFromLeft 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Styles existants */
+.profil-header {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 10px rgba(177, 243, 245, 0.3);
+  animation: letterFloat 3s ease-in-out infinite alternate;
+}
+
+.profil-subtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.profil-subtitle::after {
+  content: '';
+  display: block;
+  margin: 1rem auto 0;
+  width: 100px;
+  height: 2px;
+  background: var(--gradient);
+}
+
+.profil-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.profil-button {
+  padding: 0.8rem 2rem;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: var(--gradient);
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profil-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(110, 0, 255, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 0 rgba(177, 243, 245, 0);
+  }
+  100% {
+    transform: translateY(-10px) scale(1.1);
+    text-shadow: 0 5px 15px rgba(177, 243, 245, 0.4);
+  }
+}
